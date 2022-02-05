@@ -27,8 +27,6 @@ export default class Container extends Component {
         this.setState({episodes:true, shows:false, showId:id, showName:name})
     }
 
-   
-
   render() {
     //   const { isAdmin, logout } = this.props;  destructured for faster coding but slower debugging
     return (

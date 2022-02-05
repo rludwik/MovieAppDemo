@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/Show.scss';
-import DropdownMenu from './Dropdown';
-import { DropdownButton, Dropdown, Item } from 'react-bootstrap';
-
 
 export default class Show extends Component {
 
@@ -25,7 +22,6 @@ export default class Show extends Component {
     var select = document.getElementById('seasons');
     var value = select.options[select.selectedIndex].value;
     this.setState({season: value})
-    console.log('here', value);
   }
 
   async componentDidMount() {
@@ -42,7 +38,6 @@ export default class Show extends Component {
         seasonsArr.push(i);
       }
     }
-    console.log(seasonsArr);
     if(this.state.loading)
       return <h1>LOADING DATA...</h1>
     return (
@@ -61,17 +56,11 @@ export default class Show extends Component {
                )
              })}
           </select>
-          {console.log(document.getElementById('seasons'))}
-          {/* <select id='seasons' onChange={() => this.getSelection()} className='input' name="seasons" placeholder='selects'>
-            <option value="volvo">Volvo</option>
-          </select> */}
           <button className='btn-logout' onClick={() => this.props.logout()}> Log Out </button>
           {this.props.isAdmin && <button className='btn-logout' onClick={() => alert("You're an Admin")}> Admin Page </button>}
-          {!this.props.isAdmin && <button className='btn-logout' onClick={() => alert("You're a user")}> Contact an Admin </button>}
-          
+          {!this.props.isAdmin && <button className='btn-logout' onClick={() => alert("You're a user")}> Contact an Admin </button>}  
         </div>
-        <div className="inner-container">
-          
+        <div className="inner-container"> 
           {this.state.json && 
               this.state.json.filter((val) => {
                 if(this.state.searchTerm === ''){
