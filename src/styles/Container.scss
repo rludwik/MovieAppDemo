@@ -1,0 +1,39 @@
+.Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 120px;
+}
+.Sidemenu {
+    float: left;
+    background: #000;
+    width: 120px;
+    height: 1080px;
+    z-index: 10;
+    color: white;
+    padding-top: 50px;
+}
+
+.item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: center;
+    &:hover {
+        transition: ease-in-out .2s;
+        cursor:pointer;
+        // width: 150px;
+        background-color: #ddd;
+        color: black
+      } 
+    &.admin {
+        color:red;
+        &:hover{
+            color: black;
+            font-weight: bold;
+            background-color: red;
+        }
+    }
+}
+

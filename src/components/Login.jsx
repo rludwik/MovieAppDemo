@@ -17,9 +17,8 @@ export default class Login extends Component {
     password = (e) => {
         this.setState({pass: e.target.value});
     }
-    
+    debugger
     handleLogin = (user, pass) => {
-        console.log(user, pass);
         if(user.toLowerCase() === 'user' && pass === '123')
             this.props.login(false)
         else if(user.toLowerCase() === 'admin' && pass === '123'){

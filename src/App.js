@@ -1,7 +1,8 @@
-import Home from './components/Home.jsx';
 import './styles/App.scss'
 import React, { Component } from 'react';
+import Container from './components/Container.jsx'
 import Login from './components/Login.jsx'
+
 
 export default class App extends Component {
 
@@ -21,11 +22,11 @@ export default class App extends Component {
   render(){
     return (
       <div className='App'>
-        {!this.state.auth && <div className='Header'><h1>Log In to View Shows</h1></div>}
-        {!this.state.auth && <Login login={this.login} />}
-
-        {this.state.auth && <div className='Header'><h1>T.V. SHOWS!</h1></div>}
-        {this.state.auth && <Home logout={this.logout} isAdmin={this.state.admin} />}
+        <div className='login'>
+          {!this.state.auth && <div className='Header'><h1>Log In to View Shows</h1></div>}
+          {!this.state.auth && <Login login={this.login} />}
+        </div>
+          {this.state.auth && <Container logout={this.logout} isAdmin={this.state.admin} />}
       </div>
     );
   }
