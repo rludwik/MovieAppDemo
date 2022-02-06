@@ -1,0 +1,83 @@
+.test {
+    color:green;
+}
+
+.inner-container {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.episodes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50px;
+    transition: ease-in-out .5s;
+    &:hover {
+        transition: ease-in-out .5s;
+        cursor:pointer;
+        box-shadow: 7px 7px 5px rgba(0, 0, 0, .4);
+        border: 2px dashed red;
+        color: red
+      }
+    &:hover > ul > img {
+        border-radius: 10px;
+    }
+}
+
+.title {
+    text-align-last: center;
+}
+
+.image {
+    height: 140px;
+    width: 250px;
+}
+
+.btn-logout {
+    margin-left: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.popup {
+    background-color: rgba(0, 0, 0, .95);
+    max-width: 300px;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.search {
+    text-align: center;
+    font-size: large;
+}
+
+.seasons {
+    margin-left: 35px;
+}
+
+img {
+    border-radius: 50px;
+    transition: ease-in-out .5s;
+}
+
+ul {
+    padding-left: 0;
+    padding-right: 5;
+}
+
+li {
+    list-style-type: none;
+    text-align: center;
+}

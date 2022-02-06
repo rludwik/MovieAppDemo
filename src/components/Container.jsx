@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Container.scss'
-import Show from './Show';
-import Home from './Home';
+import Show from './Show.jsx';
+import Home from './Home.jsx';
 
 export default class Container extends Component {
     constructor(props){
@@ -28,7 +28,6 @@ export default class Container extends Component {
     }
 
   render() {
-    //   const { isAdmin, logout } = this.props;  destructured for faster coding but slower debugging
     return (
         <div className='Container'>
            <div className='Sidemenu'>
@@ -37,8 +36,14 @@ export default class Container extends Component {
                {this.props.isAdmin && <div onClick={() => this.handleUser(true)} className='item admin'>Admin page</div>}
             </div>
             <div className='Content'>
-                {/* <div className='Header'><h1>T.V. SHOWS!</h1></div> */}
-                {this.state.episodes && 
+                {this.state.shows && console.log('shows')}
+                {this.state.shows ? 
+                    <Home
+                    logout={this.props.logout} 
+                    isAdmin={this.props.isAdmin} 
+                    displayChosenShow={this.displayChosenShow} 
+                /> 
+                :
                     <Show 
                     logout={this.props.logout} 
                     isAdmin={this.props.isAdmin} 
@@ -46,12 +51,7 @@ export default class Container extends Component {
                     showId={this.state.showId}
                     showName={this.state.showName}
                 />}
-                {this.state.shows && 
-                    <Home 
-                    logout={this.props.logout} 
-                    isAdmin={this.props.isAdmin} 
-                    displayChosenShow={this.displayChosenShow} 
-                />}
+                
             </div>
         </div>
     )

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 export default class Login extends Component {
   
     state = {
@@ -30,11 +28,11 @@ export default class Login extends Component {
 
     render() {
         return( 
-
-        <div className='outer-container'>
-            <input className='input' type='text' placeholder='Username' onChange={this.username}/>
-            <input className='input' type='password' placeholder='Password' onChange={this.password} />
-            <button onClick={() => this.handleLogin(this.state.user, this.state.pass)}> Login</button>
-        </div>
-    )}
+            <div className='outer-container'>
+                <input className='input' type='text' placeholder='Username' onChange={this.username}/>
+                <input className='input' type='password' placeholder='Password' onChange={this.password} />
+                <button onClick={() => this.handleLogin(this.state.user, this.state.pass)}> Login</button>
+            </div>
+        )
+    }
 }

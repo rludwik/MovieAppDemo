@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Show.scss';
+import { Popup } from 'semantic-ui-react'
 
 export default class Show extends Component {
 
@@ -16,6 +17,10 @@ export default class Show extends Component {
 
   handleChange = (e) => {
     this.setState({searchTerm: e.target.value});
+  }
+
+  showSummary = (sum) => {
+    alert(sum);
   }
 
   getSelection = () => {
@@ -74,23 +79,28 @@ export default class Show extends Component {
               }).map((number, id) => {
                 return(
                   this.state.season > 0 ? 
-                  this.state.season == number.season &&
-                  <div key={id} className='episode'>
-                    <h3>{number.name}</h3>
-                    <ul>
+                  this.state.season === number.season &&
+                  <Popup className='popup' left center size='small' content={number.summary.slice(3, -4)} trigger={
+                    <div key={id} className='episode' >
+                      <h3>{number.name}</h3>
+                      <ul>
+                        <li>Season: {number.season} Episode: {number.number}</li>
+                        {number.image !== null && <img src={number.image.medium} alt='Show description' />}
+                        {number.image === null && <div className='image'></div>}
+                      </ul>
+                    </div>}
+                  />
+                  :
+                  <Popup className='popup' left center size='small' content={number.summary.slice(3, -4)} trigger={
+                    <div key={id} className='episode'>
+                      <h3>{number.name}</h3>
+                      <ul>
                       <li>Season: {number.season} Episode: {number.number}</li>
                       {number.image !== null && <img src={number.image.medium} alt='Show description' />}
                       {number.image === null && <div className='image'></div>}
                     </ul>
-                  </div> :
-                  <div key={id} className='episode'>
-                    <h3>{number.name}</h3>
-                    <ul>
-                      <li>Season: {number.season} Episode: {number.number}</li>
-                      {number.image !== null && <img src={number.image.medium} alt='Show description' />}
-                      {number.image === null && <div className='image'></div>}
-                    </ul>
-                  </div>
+                    </div>}
+                  />
                 )
               })
           }

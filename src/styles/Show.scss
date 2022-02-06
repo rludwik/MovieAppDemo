@@ -14,10 +14,21 @@
     justify-content: center;
     align-items: center;
     border: 2px solid black;
+    text-align: center;
     padding: 20px;
     margin: 10px;
     border-radius: 50px;
     transition: ease-in-out .5s;
+    height: 300px;
+    max-width: 250px;
+    @media (max-width: 1250px) {
+        width: 32%;
+    }
+    @media (max-width: 1050px) {
+        width: 32%;
+        margin-left: 23%;
+    }
+    
     &:hover {
         transition: ease-in-out .5s;
         cursor:pointer;
@@ -32,6 +43,14 @@
 
 .title {
     text-align-last: center;
+    @media (max-width: 1250px) {
+        width: 51%;
+        margin-left: 25%;
+    }
+    @media (max-width: 1050px) {
+        width: 51%;
+        margin-left: 35%;
+    }
 }
 
 .image {
@@ -46,12 +65,37 @@
     }
 }
 
+.search-box {
+    height: 37px;
+    font-size: large;
+    border: none;
+    text-align: center;
+    background-color: rgba(230,230,255,0.6);
+    border-radius: 35px;
+}
+
+.popup {
+    background-color: rgba(0, 0, 0, .95);
+    max-width: 300px;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+}
+
 .search {
     text-align: center;
     font-size: large;
+    @media (max-width: 1250px) {
+        width: 57%;
+        margin-left: 25%;
+    }
+    @media (max-width: 1050px) {
+        width: 34%;
+        margin-left: 45%;
+    }
 }
 
-.seasons{
+.seasons {
 margin-left: 35px;
 }
 

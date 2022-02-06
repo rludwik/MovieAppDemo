@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/Show.scss';
+import "../styles/Home.scss";
 
-export default class Show extends Component {
+export default class Home extends Component {
 
     state = {
         loading: true,
@@ -28,6 +28,7 @@ export default class Show extends Component {
         else {
             return (
             <div className="outer-container">
+                {console.log('Home loaded')}
                 <div className='title'><h1>ALL T.V. SHOWS!</h1></div>
                 <div className='search' >
                     <input className='input search-box' type='text' placeholder='Search Show...' onChange={this.handleChange}/>
@@ -50,7 +51,7 @@ export default class Show extends Component {
                             return null
                         }).map((number, id) => {
                             return(
-                            <div key={id} className='episode' onClick={() => this.props.displayChosenShow(number.id, number.name)}>
+                            <div key={id} className='episodes' onClick={() => this.props.displayChosenShow(number.id, number.name)}>
                                 <h3>{number.name}</h3>
                                 <ul>
                                 {/* <li>Season: {number.season}</li> */}
