@@ -66,10 +66,6 @@
 .search-box {
     height: 37px;
     font-size: large;
-    /* border-bottom: solid 2px red; */
-    /* border-left: white; */
-    /* border-right: white; */
-    /* border-top: white; */
     border: none;
     text-align: center;
     background-color: rgba(230,230,255,0.6);
@@ -95,15 +91,10 @@
         width: 34%;
         margin-left: 45%;
     }
-    // @media (max-width: 740px) {
-    //     width:34%;
-    //     margin-left: 45%;
-
-    // }
 }
 
 .seasons {
-margin-left: 35px;
+    margin-left: 35px;
 }
 
 img {
