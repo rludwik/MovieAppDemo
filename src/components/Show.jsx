@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Show.scss';
-import { Popup } from 'semantic-ui-react'
+import { Loader, Popup} from "semantic-ui-react";
 
 export default class Show extends Component {
 
@@ -44,7 +44,7 @@ export default class Show extends Component {
       }
     }
     if(this.state.loading)
-      return <h1>LOADING DATA...</h1>
+      return <Loader active size='massive'>Loading Episodes...</Loader>
     return (
       <div className="outer-container">
         <div className='title'><h1>{this.props.showName}</h1></div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../styles/Home.scss";
+import { Loader } from "semantic-ui-react"
 
 export default class Home extends Component {
 
@@ -24,9 +25,8 @@ export default class Home extends Component {
 
     render() {
         if(this.state.loading)
-            return <h1>LOADING DATA...</h1>
-        else {
-            return (
+            return <Loader active size='massive'>Loading</Loader>
+        return (
             <div className="outer-container">
                 <div className='title'><h1>ALL T.V. SHOWS!</h1></div>
                 <div className='search' >
@@ -63,7 +63,6 @@ export default class Home extends Component {
                     }
                 </div>
             </div>
-            );
-        } 
+        ); 
     }
 }
