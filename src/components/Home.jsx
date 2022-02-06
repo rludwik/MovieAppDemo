@@ -28,7 +28,6 @@ export default class Home extends Component {
         else {
             return (
             <div className="outer-container">
-                {console.log('Home loaded')}
                 <div className='title'><h1>ALL T.V. SHOWS!</h1></div>
                 <div className='search' >
                     <input className='input search-box' type='text' placeholder='Search Show...' onChange={this.handleChange}/>

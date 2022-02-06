@@ -14,13 +14,10 @@
     justify-content: center;
     align-items: center;
     border: 2px solid black;
-    text-align: center;
     padding: 20px;
     margin: 10px;
     border-radius: 50px;
     transition: ease-in-out .5s;
-    height: 300px;
-    max-width: 250px;
     @media (max-width: 1250px) {
         width: 32%;
     }
@@ -29,6 +26,7 @@
         margin-left: 23%;
     }
     
+    height: 303px;
     &:hover {
         transition: ease-in-out .5s;
         cursor:pointer;
@@ -68,6 +66,10 @@
 .search-box {
     height: 37px;
     font-size: large;
+    /* border-bottom: solid 2px red; */
+    /* border-left: white; */
+    /* border-right: white; */
+    /* border-top: white; */
     border: none;
     text-align: center;
     background-color: rgba(230,230,255,0.6);
@@ -93,6 +95,11 @@
         width: 34%;
         margin-left: 45%;
     }
+    // @media (max-width: 740px) {
+    //     width:34%;
+    //     margin-left: 45%;
+
+    // }
 }
 
 .seasons {

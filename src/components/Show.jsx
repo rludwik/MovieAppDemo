@@ -79,7 +79,7 @@ export default class Show extends Component {
               }).map((number, id) => {
                 return(
                   this.state.season > 0 ? 
-                  this.state.season === number.season &&
+                  parseInt(this.state.season) === parseInt(number.season) &&
                   <Popup className='popup' left center size='small' content={number.summary.slice(3, -4)} trigger={
                     <div key={id} className='episode' >
                       <h3>{number.name}</h3>

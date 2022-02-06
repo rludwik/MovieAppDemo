@@ -36,7 +36,6 @@ export default class Container extends Component {
                {this.props.isAdmin && <div onClick={() => this.handleUser(true)} className='item admin'>Admin page</div>}
             </div>
             <div className='Content'>
-                {this.state.shows && console.log('shows')}
                 {this.state.shows ? 
                     <Home
                     logout={this.props.logout} 
