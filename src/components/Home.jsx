@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../styles/Home.scss";
-import { Loader, Dropdown } from "semantic-ui-react";
+import { Loader, Icon } from "semantic-ui-react";
 
 export default class Home extends Component {
 
@@ -34,7 +34,7 @@ export default class Home extends Component {
                     <input className='input search-box' type='text' placeholder='Search Show...' onChange={this.handleChange}/>
                     <input className='input radio' type="radio" name='search' onChange={() => this.setState({startsWith: true})} checked={startsWith}/> Starts With
                     <input className='input radio' type="radio" name='search' onChange={() => this.setState({startsWith: false})} /> Contains
-                    <button className='btn-logout' onClick={() => this.props.logout()}> Log Out </button>
+                    <button className='btn-logout' onClick={() => this.props.logout()}> <Icon name='log out' /> Logout</button>
                     {this.props.isAdmin && <button className='btn-logout' onClick={() => alert("You're an Admin")}> Admin Page </button>}
                     {!this.props.isAdmin && <button className='btn-logout' onClick={() => alert("You're a user")}> Contact an Admin </button>}
                     
@@ -54,6 +54,10 @@ export default class Home extends Component {
                             return(
                             <div key={id} className='episodes' onClick={() => this.props.displayChosenShow(number.id, number.name)}>
                                 <h3>{number.name}</h3>
+                                {this.props.isAdmin && number.network && <h4 style={{color:'green'}}>Admin View: {number.network.name}</h4>}
+                                {this.props.isAdmin && number.genres &&
+                                    number.genres.map((genre, id) => {return <li key={id}>{genre}</li>})
+                                }
                                 <ul>
                                 {number.image !== null && <img src={number.image.medium} alt='Show description' />}
                                 {number.image === null && <div className='image'></div>}

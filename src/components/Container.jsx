@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Container.scss'
 import Show from './Show.jsx';
 import Home from './Home.jsx';
+import {Icon} from 'semantic-ui-react';
 
 export default class Container extends Component {
     constructor(props){
@@ -34,6 +35,9 @@ export default class Container extends Component {
                <div onClick={() => this.displayAllShows()} className='item'>Home</div>
                <div onClick={() => this.displayAllShows()} className='item'>Shows</div>
                {this.props.isAdmin && <div onClick={() => this.handleUser(true)} className='item admin'>Admin page</div>}
+               <div onClick={() => this.displayAllShows()} className='item setting-item'>
+                   <Icon style={{textAlign:'center'}} className='setting' name='setting' size='big'/>
+               </div>
             </div>
             <div className='Content'>
                 {this.state.shows ? 
