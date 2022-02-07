@@ -29,6 +29,13 @@ export default class Show extends Component {
     this.setState({season: value})
   }
 
+  redirectUser = (url) => {
+    window.open(
+      url,
+      '_blank' // <- This is what makes it open in a new window.
+    );
+  }
+
   async componentDidMount() {
     const url = `https://api.tvmaze.com/shows/${this.state.showId}/episodes`
     const response = await fetch(url);
@@ -55,9 +62,9 @@ export default class Show extends Component {
           <label className='seasons' for="seasons">Season</label>   
           <select id='seasons' onChange={() => this.getSelection()} className='input' name="seasons" placeholder='selects'>
             <option>All</option>
-             {seasonsArr.map(option => {
+             {seasonsArr.map((option, id) => {
                return(
-                 option !== 0 && <option>{option}</option>
+                 option !== 0 && <option key={id}>{option}</option>
                )
              })}
           </select>
@@ -80,8 +87,8 @@ export default class Show extends Component {
                 return(
                   this.state.season > 0 ? 
                   parseInt(this.state.season) === parseInt(number.season) &&
-                  <Popup className='popup' left center size='small' content={number.summary.slice(3, -4)} trigger={
-                    <div key={id} className='episode' >
+                  <Popup className='popup'position='bottom left' size='small' content={number.summary.slice(3, -4)} trigger={
+                    <div key={id} className='episode' onClick={() => this.redirectUser(number.url)}>
                       <h3>{number.name}</h3>
                       <ul>
                         <li>Season: {number.season} Episode: {number.number}</li>
@@ -91,8 +98,8 @@ export default class Show extends Component {
                     </div>}
                   />
                   :
-                  <Popup className='popup' left center size='small' content={number.summary.slice(3, -4)} trigger={
-                    <div key={id} className='episode'>
+                  <Popup className='popup' position='bottom left' size='small' content={number.summary.slice(3, -4)} trigger={
+                    <div key={id} className='episode' onClick={() => this.redirectUser(number.url)}>
                       <h3>{number.name}</h3>
                       <ul>
                       <li>Season: {number.season} Episode: {number.number}</li>

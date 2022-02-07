@@ -22,10 +22,12 @@ export default class App extends Component {
   render(){
     return (
       <div className='App'>
-        <div className='login'>
-          {!this.state.auth && <div className='Header'><h1>Log In to View Shows</h1></div>}
-          {!this.state.auth && <Login login={this.login} />}
-        </div>
+         {!this.state.auth && 
+            <div className='login'>
+              <div className='Header'><h1>Log In to View Shows</h1></div>
+              <Login login={this.login} />
+            </div>
+          }
           {this.state.auth && <Container logout={this.logout} isAdmin={this.state.admin} />}
       </div>
     );
